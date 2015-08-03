@@ -10,14 +10,14 @@ namespace SaaSOvation.AgilePM.Application.Teams
 {
     public class TeamApplicationService
     {
-        public TeamApplicationService(ITeamMemberRepository teamMemberRepository, IProductOwnerRepository productOwnerRepository)
+        public TeamApplicationService(IチームメンバRepository teamMemberRepository, IプロダクトオーナRepository productOwnerRepository)
         {
             this.teamMemberRepository = teamMemberRepository;
             this.productOwnerRepository = productOwnerRepository;
         }
 
-        readonly ITeamMemberRepository teamMemberRepository;
-        readonly IProductOwnerRepository productOwnerRepository;
+        readonly IチームメンバRepository teamMemberRepository;
+        readonly IプロダクトオーナRepository productOwnerRepository;
 
         public void EnableProductOwner(EnableProductOwnerCommand command)
         {
@@ -32,7 +32,7 @@ namespace SaaSOvation.AgilePM.Application.Teams
                 }
                 else
                 {
-                    productOwner = new ProductOwner(tenantId, command.Username, command.FirstName, command.LastName, command.EmailAddress, command.OccurredOn);
+                    productOwner = new プロダクトオーナ(tenantId, command.Username, command.FirstName, command.LastName, command.EmailAddress, command.OccurredOn);
                     this.productOwnerRepository.Save(productOwner);
                 }
                 ApplicationServiceLifeCycle.Success();
@@ -56,7 +56,7 @@ namespace SaaSOvation.AgilePM.Application.Teams
                 }
                 else
                 {
-                    teamMember = new TeamMember(tenantId, command.Username, command.FirstName, command.LastName, command.EmailAddress, command.OccurredOn);
+                    teamMember = new チームメンバ(tenantId, command.Username, command.FirstName, command.LastName, command.EmailAddress, command.OccurredOn);
                     this.teamMemberRepository.Save(teamMember);
                 }
                 ApplicationServiceLifeCycle.Success();

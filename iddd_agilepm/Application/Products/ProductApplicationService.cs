@@ -14,15 +14,15 @@ namespace SaaSOvation.AgilePM.Application.Products
 {
     public class ProductApplicationService
     {
-        public ProductApplicationService(IProductRepository productRepository, IProductOwnerRepository productOwnerRepository, ITimeConstrainedProcessTrackerRepository processTrackerRepository)
+        public ProductApplicationService(IプロダクトRepository productRepository, IプロダクトオーナRepository productOwnerRepository, ITimeConstrainedProcessTrackerRepository processTrackerRepository)
         {
             this.productRepository = productRepository;
             this.productOwnerRepository = productOwnerRepository;
             this.processTrackerRepository = processTrackerRepository;
         }
 
-        readonly IProductRepository productRepository;
-        readonly IProductOwnerRepository productOwnerRepository;
+        readonly IプロダクトRepository productRepository;
+        readonly IプロダクトオーナRepository productOwnerRepository;
         readonly ITimeConstrainedProcessTrackerRepository processTrackerRepository;
 
         public void InitiateDiscussion(InitiateDiscussionCommand command)
@@ -30,7 +30,7 @@ namespace SaaSOvation.AgilePM.Application.Products
             ApplicationServiceLifeCycle.Begin();
             try
             {
-                var product = this.productRepository.Get(new TenantId(command.TenantId), new ProductId(command.ProductId));
+                var product = this.productRepository.Get(new TenantId(command.TenantId), new プロダクトId(command.ProductId));
                 if (product == null)
                     throw new InvalidOperationException(
                         string.Format("Unknown product of tenant id: {0} and product id: {1}.", command.TenantId, command.ProductId));
@@ -67,7 +67,7 @@ namespace SaaSOvation.AgilePM.Application.Products
 
         public void RequestProductDiscussion(RequestProductDiscussionCommand command)
         {
-            var product = this.productRepository.Get(new TenantId(command.TenantId), new ProductId(command.ProductId));
+            var product = this.productRepository.Get(new TenantId(command.TenantId), new プロダクトId(command.ProductId));
             if (product == null)
                 throw new InvalidOperationException(
                     string.Format("Unknown product of tenant id: {0} and product id: {1}.", command.TenantId, command.ProductId));
@@ -92,12 +92,12 @@ namespace SaaSOvation.AgilePM.Application.Products
             ApplicationServiceLifeCycle.Begin();
             try
             {
-                var product = this.productRepository.Get(new TenantId(command.TenantId), new ProductId(command.ProductId));
+                var product = this.productRepository.Get(new TenantId(command.TenantId), new プロダクトId(command.ProductId));
                 if (product == null)
                     throw new InvalidOperationException(
                         string.Format("Unknown product of tenant id: {0} and product id: {1}.", command.TenantId, command.ProductId));
 
-                var timedOutEventName = typeof(ProductDiscussionRequestTimedOut).Name;
+                var timedOutEventName = typeof(プロダクトディスカッションリクエストタイムアウト).Name;
 
                 var tracker = new TimeConstrainedProcessTracker(
                     tenantId: command.TenantId,
@@ -147,12 +147,12 @@ namespace SaaSOvation.AgilePM.Application.Products
             }
         }
 
-        void SendEmailForTimedOutProcess(Product product)
+        void SendEmailForTimedOutProcess(プロダクト product)
         {
             // TODO: implement
         }
 
-        void RequestProductDiscussionFor(Product product)
+        void RequestProductDiscussionFor(プロダクト product)
         {
             ApplicationServiceLifeCycle.Begin();
             try
@@ -183,7 +183,7 @@ namespace SaaSOvation.AgilePM.Application.Products
         string NewProductWith(string tenantId, string productOwnerId, string name, string description, DiscussionAvailability discussionAvailability)
         {
             var tid = new TenantId(tenantId);
-            var productId = default(ProductId);
+            var productId = default(プロダクトId);
             ApplicationServiceLifeCycle.Begin();
             try
             {
@@ -191,7 +191,7 @@ namespace SaaSOvation.AgilePM.Application.Products
 
                 var productOwner = this.productOwnerRepository.Get(tid, productOwnerId);
 
-                var product = new Product(tid, productId, productOwner.ProductOwnerId, name, description, discussionAvailability);
+                var product = new プロダクト(tid, productId, productOwner.ProductOwnerId, name, description, discussionAvailability);
 
                 this.productRepository.Save(product);
 

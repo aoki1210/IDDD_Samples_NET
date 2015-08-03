@@ -9,12 +9,12 @@ namespace SaaSOvation.AgilePM.Application.Products.BacklogItems
 {
     public class BacklogItemApplicationService
     {
-        public BacklogItemApplicationService(IBacklogItemRepository backlogItemRepository)
+        public BacklogItemApplicationService(IバックログアイテムRepository backlogItemRepository)
         {
             this.backlogItemRepository = backlogItemRepository;
         }
 
-        readonly IBacklogItemRepository backlogItemRepository;
+        readonly IバックログアイテムRepository backlogItemRepository;
 
         // TODO: APIs for student assignment
     }
