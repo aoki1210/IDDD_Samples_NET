@@ -9,7 +9,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Teams
 {
     public class チームメンバ : メンバ
     {
-        public チームメンバ(TenantId tenantId, string userName, string firstName, string lastName, string emailAddress, DateTime initializedOn)
+        public チームメンバ(テナントId tenantId, string userName, string firstName, string lastName, string emailAddress, DateTime initializedOn)
             : base(tenantId, userName, firstName, lastName, emailAddress, initializedOn)
         {
         }

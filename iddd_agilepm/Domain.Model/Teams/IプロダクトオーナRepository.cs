@@ -9,9 +9,9 @@ namespace SaaSOvation.AgilePM.Domain.Model.Teams
 {
     public interface IプロダクトオーナRepository
     {
-        ICollection<プロダクトオーナ> GetAllProductOwners(TenantId tenantId);
+        ICollection<プロダクトオーナ> GetAllProductOwners(テナントId tenantId);
 
-        プロダクトオーナ Get(TenantId tenantId, string userName);
+        プロダクトオーナ Get(テナントId tenantId, string userName);
 
         void Remove(プロダクトオーナ owner);
 

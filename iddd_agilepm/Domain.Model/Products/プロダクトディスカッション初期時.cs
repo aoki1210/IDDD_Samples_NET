@@ -20,7 +20,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
     
     public class プロダクトディスカッション初期時 : IDomainEvent
     {
-        public プロダクトディスカッション初期時(TenantId tenantId, プロダクトId productId, プロダクトディスカッション productDiscussion)
+        public プロダクトディスカッション初期時(テナントId tenantId, プロダクトId productId, プロダクトディスカッション productDiscussion)
         {
             this.EventVersion = 1;
             this.OccurredOn = DateTime.Now;
@@ -37,6 +37,6 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
 
         public プロダクトId ProductId { get; private set; }
 
-        public TenantId TenantId { get; private set; }
+        public テナントId TenantId { get; private set; }
     }
 }

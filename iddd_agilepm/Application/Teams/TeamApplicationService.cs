@@ -21,7 +21,7 @@ namespace SaaSOvation.AgilePM.Application.Teams
 
         public void EnableProductOwner(EnableProductOwnerCommand command)
         {
-            var tenantId = new TenantId(command.TenantId);
+            var tenantId = new テナントId(command.TenantId);
             ApplicationServiceLifeCycle.Begin();
             try
             {
@@ -45,7 +45,7 @@ namespace SaaSOvation.AgilePM.Application.Teams
 
         public void EnableTeamMember(EnableTeamMemberCommand command)
         {
-            var tenantId = new TenantId(command.TenantId);
+            var tenantId = new テナントId(command.TenantId);
             ApplicationServiceLifeCycle.Begin();
             try
             {
@@ -69,7 +69,7 @@ namespace SaaSOvation.AgilePM.Application.Teams
 
         public void ChangeTeamMemberEmailAddress(ChangeTeamMemberEmailAddressCommand command)
         {
-            var tenantId = new TenantId(command.TenantId);
+            var tenantId = new テナントId(command.TenantId);
             ApplicationServiceLifeCycle.Begin();
             try
             {
@@ -97,7 +97,7 @@ namespace SaaSOvation.AgilePM.Application.Teams
 
         public void ChangeTeamMemberName(ChangeTeamMemberNameCommand command)
         {
-            var tenantId = new TenantId(command.TenantId);
+            var tenantId = new テナントId(command.TenantId);
             ApplicationServiceLifeCycle.Begin();
             try
             {
@@ -125,7 +125,7 @@ namespace SaaSOvation.AgilePM.Application.Teams
 
         public void DisableProductOwner(DisableProductOwnerCommand command)
         {
-            var tenantId = new TenantId(command.TenantId);
+            var tenantId = new テナントId(command.TenantId);
             ApplicationServiceLifeCycle.Begin();
             try
             {
@@ -145,7 +145,7 @@ namespace SaaSOvation.AgilePM.Application.Teams
 
         public void DisableTeamMember(DisableTeamMemberCommand command)
         {
-            var tenantId = new TenantId(command.TenantId);
+            var tenantId = new テナントId(command.TenantId);
             ApplicationServiceLifeCycle.Begin();
             try
             {

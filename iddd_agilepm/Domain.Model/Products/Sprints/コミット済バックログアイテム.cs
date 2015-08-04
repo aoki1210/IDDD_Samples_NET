@@ -21,7 +21,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.Sprints
 
     public class コミット済バックログアイテム : Entity, IEquatable<コミット済バックログアイテム>
     {
-        public コミット済バックログアイテム(TenantId tenantId, スプリントId sprintId, BacklogItemId backlogItemId, int ordering = 0)
+        public コミット済バックログアイテム(テナントId tenantId, スプリントId sprintId, バックログアイテムId backlogItemId, int ordering = 0)
         {
             this.TenantId = tenantId;
             this.SprintId = sprintId;
@@ -29,15 +29,15 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.Sprints
             this.Ordering = ordering;
         }
 
-        public TenantId TenantId { get; private set; }
+        public テナントId TenantId { get; private set; }
 
         public スプリントId SprintId { get; private set; }
 
-        public BacklogItemId BacklogItemId { get; private set; }
+        public バックログアイテムId BacklogItemId { get; private set; }
 
         public int Ordering { get; private set; }
 
-        public void ReOrderFrom(BacklogItemId id, int orderOfPriority)
+        public void ReOrderFrom(バックログアイテムId id, int orderOfPriority)
         {
             if (this.BacklogItemId.Equals(id))
             {

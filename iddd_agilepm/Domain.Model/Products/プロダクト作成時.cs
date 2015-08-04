@@ -23,7 +23,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
     public class プロダクト作成時 : IDomainEvent
     {
         public プロダクト作成時(
-            TenantId tenantId,
+            テナントId tenantId,
             プロダクトId productId,
             プロダクトオーナId productOwnerId,
             string name,
@@ -54,6 +54,6 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
 
         public プロダクトオーナId ProductOwnerId { get; private set; }
 
-        public TenantId TenantId { get; private set; }
+        public テナントId TenantId { get; private set; }
     }
 }

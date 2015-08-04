@@ -9,7 +9,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
 {
     public class タスクステータス変更時 : IDomainEvent
     {
-        public タスクステータス変更時(Tenants.TenantId tenantId, BacklogItemId backlogItemId, タスクId taskId, タスクステータス status)
+        public タスクステータス変更時(Tenants.テナントId tenantId, バックログアイテムId backlogItemId, タスクId taskId, タスクステータス status)
         {
             this.TenantId = tenantId;
             this.BacklogItemId = backlogItemId;
@@ -17,11 +17,11 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
             this.Status = status;
         }
 
-        public Tenants.TenantId TenantId { get; private set; }
+        public Tenants.テナントId TenantId { get; private set; }
         public int EventVersion { get; set; }
         public DateTime OccurredOn { get; set; }
 
-        public BacklogItemId BacklogItemId { get; private set; }
+        public バックログアイテムId BacklogItemId { get; private set; }
         public タスクId TaskId { get; private set; }
         public タスクステータス Status { get; private set; }
     }

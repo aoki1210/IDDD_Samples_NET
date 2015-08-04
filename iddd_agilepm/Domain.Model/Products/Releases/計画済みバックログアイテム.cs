@@ -21,7 +21,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.Releases
 
     public class 計画済みバックログアイテム : Entity, IEquatable<計画済みバックログアイテム>
     {
-        public 計画済みバックログアイテム(TenantId tenantId, リリースId releaseId, BacklogItemId backlogItemId, int ordering = 0)
+        public 計画済みバックログアイテム(テナントId tenantId, リリースId releaseId, バックログアイテムId backlogItemId, int ordering = 0)
         {
             this.TenantId = tenantId;
             this.ReleaseId = releaseId;
@@ -29,9 +29,9 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.Releases
             this.Ordering = ordering;
         }
 
-        public TenantId TenantId { get; private set; }
+        public テナントId TenantId { get; private set; }
         public リリースId ReleaseId { get; private set; }
-        public BacklogItemId BacklogItemId { get; private set; }
+        public バックログアイテムId BacklogItemId { get; private set; }
         public int Ordering { get; private set; }
 
         public override bool Equals(object obj)

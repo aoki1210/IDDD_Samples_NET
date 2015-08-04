@@ -22,7 +22,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
     public class プロダクトリリーススケジュール時 : IDomainEvent
     {
         public プロダクトリリーススケジュール時(
-            TenantId tenantId,
+            テナントId tenantId,
             プロダクトId productId,
             リリースId releaseId,
             string name,
@@ -57,6 +57,6 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
 
         public DateTime Starts { get; private set; }
 
-        public TenantId TenantId { get; private set; }
+        public テナントId TenantId { get; private set; }
     }
 }

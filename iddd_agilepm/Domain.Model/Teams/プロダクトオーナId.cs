@@ -19,16 +19,16 @@ namespace SaaSOvation.AgilePM.Domain.Model.Teams
 
     public class プロダクトオーナId : Identity
     {
-        public プロダクトオーナId(TenantId tenantId, string id)
+        public プロダクトオーナId(テナントId tenantId, string id)
             : base(tenantId + ":" + id)
         {
         }
 
-        public TenantId TenantId
+        public テナントId TenantId
         {
             get
             {
-                return new TenantId(this.Id.Split(':')[0]);
+                return new テナントId(this.Id.Split(':')[0]);
             }
         }
 

@@ -21,7 +21,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Teams
     public class プロダクトオーナ : メンバ
     {
         public プロダクトオーナ(
-            TenantId tenantId,
+            テナントId tenantId,
             string username,
             string firstName,
             string lastName,

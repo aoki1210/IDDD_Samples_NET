@@ -11,17 +11,17 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
 {
     public interface IバックログアイテムRepository
     {
-        ICollection<バックログアイテム> GetAllComittedTo(TenantId tenantId, スプリントId sprintId);
+        ICollection<バックログアイテム> GetAllComittedTo(テナントId tenantId, スプリントId sprintId);
 
-        ICollection<バックログアイテム> GetAllScheduledFor(TenantId tenantId, リリースId releaseId);
+        ICollection<バックログアイテム> GetAllScheduledFor(テナントId tenantId, リリースId releaseId);
 
-        ICollection<バックログアイテム> GetAllOutstanding(TenantId tenantId, プロダクトId productId);
+        ICollection<バックログアイテム> GetAllOutstanding(テナントId tenantId, プロダクトId productId);
 
-        ICollection<バックログアイテム> GetAll(TenantId tenantId, プロダクトId productId);
+        ICollection<バックログアイテム> GetAll(テナントId tenantId, プロダクトId productId);
 
-        バックログアイテム Get(TenantId tenantId, BacklogItemId backlogItemId);
+        バックログアイテム Get(テナントId tenantId, バックログアイテムId backlogItemId);
 
-        BacklogItemId GetNextIdentity();
+        バックログアイテムId GetNextIdentity();
 
         void Remove(バックログアイテム backlogItem);
 

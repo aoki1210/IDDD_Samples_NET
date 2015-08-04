@@ -22,7 +22,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
     public class プロダクトディスカッションリクエスト時 : IDomainEvent
     {
         public プロダクトディスカッションリクエスト時(
-            TenantId tenantId,
+            テナントId tenantId,
             プロダクトId productId,
             プロダクトオーナId productOwnerId,
             string name,
@@ -53,6 +53,6 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
 
         public bool RequestingDiscussion { get; private set; }
 
-        public TenantId TenantId { get; private set; }
+        public テナントId TenantId { get; private set; }
     }
 }

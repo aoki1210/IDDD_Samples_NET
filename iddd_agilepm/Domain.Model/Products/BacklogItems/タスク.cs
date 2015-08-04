@@ -12,8 +12,8 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
     public class タスク : EntityWithCompositeId
     {
         public タスク(
-            TenantId tenantId, 
-            BacklogItemId backlogItemId, 
+            テナントId tenantId, 
+            バックログアイテムId backlogItemId, 
             タスクId taskId, 
             チームメンバ teamMember, 
             string name, 
@@ -37,9 +37,9 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
         string name;
         string description;
 
-        public TenantId TenantId { get; private set; }
+        public テナントId TenantId { get; private set; }
 
-        internal BacklogItemId BacklogItemId { get; private set; }
+        internal バックログアイテムId BacklogItemId { get; private set; }
 
         internal タスクId TaskId { get; private set; }
 

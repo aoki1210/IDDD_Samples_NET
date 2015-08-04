@@ -22,9 +22,9 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
     public class プロダクトバックログアイテム : Entity, IEquatable<プロダクトバックログアイテム>
     {
         public プロダクトバックログアイテム(
-            TenantId tenantId,
+            テナントId tenantId,
             プロダクトId productId,
-            BacklogItemId backlogItem,
+            バックログアイテムId backlogItem,
             int ordering)
         {
             this.BacklogItemId = backlogItem;
@@ -33,15 +33,15 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
             this.TenantId = tenantId;
         }
        
-        public TenantId TenantId { get; private set; }
+        public テナントId TenantId { get; private set; }
 
         public プロダクトId ProductId { get; private set; }
 
-        public BacklogItemId BacklogItemId { get; private set; }
+        public バックログアイテムId BacklogItemId { get; private set; }
 
         public int Ordering { get; private set; }
 
-        internal void ReorderFrom(BacklogItemId id, int ordering)
+        internal void ReorderFrom(バックログアイテムId id, int ordering)
         {
             if (this.BacklogItemId.Equals(id))
             {

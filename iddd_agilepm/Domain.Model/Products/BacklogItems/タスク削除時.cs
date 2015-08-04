@@ -9,7 +9,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
 {
     public class タスク削除時 : IDomainEvent
     {
-        public タスク削除時(Tenants.TenantId tenantId, BacklogItemId backlogItemId)
+        public タスク削除時(Tenants.テナントId tenantId, バックログアイテムId backlogItemId)
         {
             this.TenantId = tenantId;
             this.EventVersion = 1;
@@ -17,9 +17,9 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
             this.BacklogItemId = backlogItemId;
         }
 
-        public Tenants.TenantId TenantId { get; private set; }
+        public Tenants.テナントId TenantId { get; private set; }
         public int EventVersion { get; set; }
         public DateTime OccurredOn { get; set; }
-        public BacklogItemId BacklogItemId { get; private set; }
+        public バックログアイテムId BacklogItemId { get; private set; }
     }
 }

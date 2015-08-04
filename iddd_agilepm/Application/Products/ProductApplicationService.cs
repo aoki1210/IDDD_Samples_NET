@@ -30,7 +30,7 @@ namespace SaaSOvation.AgilePM.Application.Products
             ApplicationServiceLifeCycle.Begin();
             try
             {
-                var product = this.productRepository.Get(new TenantId(command.TenantId), new プロダクトId(command.ProductId));
+                var product = this.productRepository.Get(new テナントId(command.TenantId), new プロダクトId(command.ProductId));
                 if (product == null)
                     throw new InvalidOperationException(
                         string.Format("Unknown product of tenant id: {0} and product id: {1}.", command.TenantId, command.ProductId));
@@ -67,7 +67,7 @@ namespace SaaSOvation.AgilePM.Application.Products
 
         public void RequestProductDiscussion(RequestProductDiscussionCommand command)
         {
-            var product = this.productRepository.Get(new TenantId(command.TenantId), new プロダクトId(command.ProductId));
+            var product = this.productRepository.Get(new テナントId(command.TenantId), new プロダクトId(command.ProductId));
             if (product == null)
                 throw new InvalidOperationException(
                     string.Format("Unknown product of tenant id: {0} and product id: {1}.", command.TenantId, command.ProductId));
@@ -78,7 +78,7 @@ namespace SaaSOvation.AgilePM.Application.Products
         public void RetryProductDiscussionRequest(RetryProductDiscussionRequestCommand command)
         {
             var processId = ProcessId.ExistingProcessId(command.ProcessId);
-            var tenantId = new TenantId(command.TenantId);
+            var tenantId = new テナントId(command.TenantId);
             var product = this.productRepository.GetByDiscussionInitiationId(tenantId, processId.Id);
             if (product == null)
                 throw new InvalidOperationException(
@@ -92,7 +92,7 @@ namespace SaaSOvation.AgilePM.Application.Products
             ApplicationServiceLifeCycle.Begin();
             try
             {
-                var product = this.productRepository.Get(new TenantId(command.TenantId), new プロダクトId(command.ProductId));
+                var product = this.productRepository.Get(new テナントId(command.TenantId), new プロダクトId(command.ProductId));
                 if (product == null)
                     throw new InvalidOperationException(
                         string.Format("Unknown product of tenant id: {0} and product id: {1}.", command.TenantId, command.ProductId));
@@ -129,7 +129,7 @@ namespace SaaSOvation.AgilePM.Application.Products
             {
                 var processId = ProcessId.ExistingProcessId(command.ProcessId);
 
-                var tenantId = new TenantId(command.TenantId);
+                var tenantId = new テナントId(command.TenantId);
 
                 var product = this.productRepository.GetByDiscussionInitiationId(tenantId, processId.Id);
 
@@ -182,7 +182,7 @@ namespace SaaSOvation.AgilePM.Application.Products
 
         string NewProductWith(string tenantId, string productOwnerId, string name, string description, DiscussionAvailability discussionAvailability)
         {
-            var tid = new TenantId(tenantId);
+            var tid = new テナントId(tenantId);
             var productId = default(プロダクトId);
             ApplicationServiceLifeCycle.Begin();
             try

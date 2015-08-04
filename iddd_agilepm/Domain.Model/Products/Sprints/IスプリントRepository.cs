@@ -23,9 +23,9 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.Sprints
 {
     public interface IスプリントRepository
     {
-        スプリント Get(TenantId tenantId, スプリントId sprintId);
+        スプリント Get(テナントId tenantId, スプリントId sprintId);
 
-        ICollection<スプリント> GetAllProductSprints(TenantId tenantId, プロダクトId productId);
+        ICollection<スプリント> GetAllProductSprints(テナントId tenantId, プロダクトId productId);
 
         スプリントId GetNextIdentity();
 

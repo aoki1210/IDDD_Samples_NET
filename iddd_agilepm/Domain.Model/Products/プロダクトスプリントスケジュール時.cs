@@ -23,7 +23,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
     public class プロダクトスプリントスケジュール時 : IDomainEvent
     {
         public プロダクトスプリントスケジュール時(
-            TenantId tenantId,
+            テナントId tenantId,
             プロダクトId productId,
             スプリントId sprintId,
             string name,
@@ -58,6 +58,6 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
 
         public DateTime Starts { get; private set; }
 
-        public TenantId TenantId { get; private set; }
+        public テナントId TenantId { get; private set; }
     }
 }

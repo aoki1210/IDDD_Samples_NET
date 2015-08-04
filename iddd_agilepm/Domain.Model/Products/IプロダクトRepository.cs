@@ -7,13 +7,13 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
 {
     public interface IプロダクトRepository
     {
-        ICollection<プロダクト> GetAllByTenant(Tenants.TenantId tenantId);
+        ICollection<プロダクト> GetAllByTenant(Tenants.テナントId tenantId);
 
         プロダクトId GetNextIdentity();
 
-        プロダクト GetByDiscussionInitiationId(Tenants.TenantId tenantId, string discussionInitiationId);
+        プロダクト GetByDiscussionInitiationId(Tenants.テナントId tenantId, string discussionInitiationId);
 
-        プロダクト Get(Tenants.TenantId tenantId, Products.プロダクトId productId);
+        プロダクト Get(Tenants.テナントId tenantId, Products.プロダクトId productId);
 
         void Remove(プロダクト product);
 

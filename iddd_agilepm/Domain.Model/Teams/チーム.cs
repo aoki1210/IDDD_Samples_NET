@@ -11,7 +11,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Teams
 {
     public class チーム : Entity
     {
-        public チーム(TenantId tenantId, string name, プロダクトオーナ productOwner = null)
+        public チーム(テナントId tenantId, string name, プロダクトオーナ productOwner = null)
         {
             AssertionConcern.AssertArgumentNotNull(tenantId, "The tenantId must be provided.");
 
@@ -22,12 +22,12 @@ namespace SaaSOvation.AgilePM.Domain.Model.Teams
             this.teamMembers = new HashSet<チームメンバ>();
         }
 
-        readonly TenantId tenantId;
+        readonly テナントId tenantId;
         string name;
         プロダクトオーナ productOwner;
         readonly HashSet<チームメンバ> teamMembers;
 
-        public TenantId TenantId
+        public テナントId TenantId
         {
             get { return this.tenantId; }
         }

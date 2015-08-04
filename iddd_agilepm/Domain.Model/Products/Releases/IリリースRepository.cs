@@ -23,11 +23,11 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.Releases
 {
     public interface IリリースRepository
     {
-        ICollection<リリース> GetAllProductReleases(TenantId tenantId, プロダクトId productId);
+        ICollection<リリース> GetAllProductReleases(テナントId tenantId, プロダクトId productId);
 
         リリースId GetNextIdentity();
 
-        リリース Get(TenantId tenantId, リリースId releaseId);
+        リリース Get(テナントId tenantId, リリースId releaseId);
 
         void Remove(リリース release);
 

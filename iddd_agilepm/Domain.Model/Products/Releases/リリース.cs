@@ -23,7 +23,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.Releases
     public class リリース : Entity
     {
         public リリース(
-            TenantId tenantId,
+            テナントId tenantId,
             プロダクトId productId,
             リリースId releaseId,
             string name,
@@ -48,7 +48,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.Releases
 
         public リリースId ReleaseId { get; private set; }
 
-        public TenantId TenantId { get; private set; }
+        public テナントId TenantId { get; private set; }
 
 
         public DateTime Begins { get; private set; }

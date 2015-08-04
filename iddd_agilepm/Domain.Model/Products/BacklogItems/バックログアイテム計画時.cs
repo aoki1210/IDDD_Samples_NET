@@ -9,7 +9,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
 {
     public class バックログアイテム計画時 : IDomainEvent
     {
-        public バックログアイテム計画時(Tenants.TenantId tenantId, BacklogItemId backlogItemId, Releases.リリースId releaseId)
+        public バックログアイテム計画時(Tenants.テナントId tenantId, バックログアイテムId backlogItemId, Releases.リリースId releaseId)
         {
             this.TenantId = tenantId;
             this.EventVersion = 1;
@@ -19,10 +19,10 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
             this.ReleaseId = releaseId;
         }
 
-        public Tenants.TenantId TenantId { get; private set; }
+        public Tenants.テナントId TenantId { get; private set; }
         public int EventVersion { get; set; }
         public DateTime OccurredOn { get; set; }
-        public BacklogItemId BacklogItemId { get; private set; }
+        public バックログアイテムId BacklogItemId { get; private set; }
 
         public Releases.リリースId ReleaseId { get; private set; }
     }

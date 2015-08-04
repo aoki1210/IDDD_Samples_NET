@@ -28,7 +28,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
     public class プロダクト : Entity, IEquatable<プロダクト>
     {
         public プロダクト(
-                TenantId tenantId,
+                テナントId tenantId,
                 プロダクトId productId,
                 プロダクトオーナId productOwnerId,
                 string name,
@@ -56,7 +56,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
 
         readonly ISet<プロダクトバックログアイテム> backlogItems;
 
-        public TenantId TenantId { get; private set; } 
+        public テナントId TenantId { get; private set; } 
         
         public プロダクトId ProductId { get; private set; }
 
@@ -118,11 +118,11 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
         }
 
         public BacklogItems.バックログアイテム PlanBacklogItem(
-                BacklogItemId newBacklogItemId,
+                バックログアイテムId newBacklogItemId,
                 String summary,
                 String category,
                 バックログアイテムタイプ type,
-                StoryPoints storyPoints)
+                ストーリポイント storyPoints)
         {
             var backlogItem =
                 new BacklogItems.バックログアイテム(
@@ -166,7 +166,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
             this.backlogItems.Add(productBacklogItem);
         }
 
-        public void ReorderFrom(BacklogItemId id, int ordering)
+        public void ReorderFrom(バックログアイテムId id, int ordering)
         {
             foreach (var productBacklogItem in this.backlogItems)
             {

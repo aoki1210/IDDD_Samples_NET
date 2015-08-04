@@ -9,7 +9,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
 {
     public class 見積りログエントリー : EntityWithCompositeId
     {
-        public 見積りログエントリー(Tenants.TenantId tenantId, タスクId taskId, DateTime date, int hoursRemaining)
+        public 見積りログエントリー(Tenants.テナントId tenantId, タスクId taskId, DateTime date, int hoursRemaining)
         {
             AssertionConcern.AssertArgumentNotNull(tenantId, "The tenant id must be provided.");
             AssertionConcern.AssertArgumentNotNull(taskId, "The task id must be provided.");
@@ -25,7 +25,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
             get { return DateTime.UtcNow.Date; }
         }
 
-        public Tenants.TenantId TenantId { get; set; }
+        public Tenants.テナントId TenantId { get; set; }
         public タスクId TaskId { get; private set; }
 
         public DateTime Date { get; private set; }

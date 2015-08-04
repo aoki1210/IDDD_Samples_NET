@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SaaSOvation.IdentityAccess.Domain.Model.Identity.グループ">
+    <Position X="3.75" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEAAAQAAAAgAAAEAAAAAIQAIAAgAAIgAAAgBABAgAA=</HashCode>
+      <FileName>Domain.Model\Identity\グループ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaaSOvation.IdentityAccess.Domain.Model.Identity.人">
+    <Position X="9.25" Y="1" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAIAAAIAAEACAAAAQAIAAkAAAAAAAgAkAAAAA=</HashCode>
+      <FileName>Domain.Model\Identity\人.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaaSOvation.IdentityAccess.Domain.Model.Identity.ユーザー">
+    <Position X="6.25" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIAAAAQgAAAAgAEFCYEAAAAAIAAAAAACAAQhAAAAAAg=</HashCode>
+      <FileName>Domain.Model\Identity\ユーザー.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaaSOvation.IdentityAccess.Domain.Model.Identity.テナント">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EAQAAAAAAABgAIFEAAIAQAUAIAAQAiAgAAAgAAAgAAA=</HashCode>
+      <FileName>Domain.Model\Identity\テナント.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SaaSOvation.IdentityAccess.Domain.Model.Access.ロール">
+    <Position X="13" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAgAAAEACBAAAQAMAAIAAAAABAgAAAQAEA=</HashCode>
+      <FileName>Domain.Model\Access\ロール.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SaaSOvation.IdentityAccess.Domain.Model.Identity.IテナントRepository">
+    <Position X="0.75" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAQAAAAAAAAABAAAAABAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Domain.Model\Identity\IテナントRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SaaSOvation.IdentityAccess.Domain.Model.Identity.IグループRepository">
+    <Position X="4" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain.Model\Identity\IグループRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SaaSOvation.IdentityAccess.Domain.Model.Identity.IユーザーRepository">
+    <Position X="6.5" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AIIAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Domain.Model\Identity\IユーザーRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SaaSOvation.IdentityAccess.Domain.Model.Access.IロールRepository">
+    <Position X="13.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Domain.Model\Access\IロールRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

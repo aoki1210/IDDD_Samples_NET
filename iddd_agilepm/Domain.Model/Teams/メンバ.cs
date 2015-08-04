@@ -21,7 +21,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Teams
     public abstract class メンバ : EntityWithCompositeId
     {
         public メンバ(
-            TenantId tenantId,
+            テナントId tenantId,
             string userName,
             string firstName,
             string lastName,
@@ -43,7 +43,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Teams
         string firstName;
         string lastName;
 
-        public TenantId TenantId { get; private set; }
+        public テナントId TenantId { get; private set; }
 
         public string Username
         {

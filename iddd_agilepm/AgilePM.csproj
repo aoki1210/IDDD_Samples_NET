@@ -14,6 +14,8 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>8432808d</NuGetPackageImportStamp>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -75,21 +77,21 @@
     <Compile Include="Domain.Model\Products\BacklogItems\バックログアイテム計画時.cs" />
     <Compile Include="Domain.Model\Products\BacklogItems\バックログアイテムステータス.cs" />
     <Compile Include="Domain.Model\Products\BacklogItems\バックログアイテムステータス変更時.cs" />
-    <Compile Include="Domain.Model\Products\BacklogItems\BacklogItemStoryPointsAssigned.cs" />
+    <Compile Include="Domain.Model\Products\BacklogItems\バックログアイテムストーリポイントアサイン時.cs" />
     <Compile Include="Domain.Model\Products\BacklogItems\バックログアイテムストーリ説明時.cs" />
     <Compile Include="Domain.Model\Products\BacklogItems\バックログアイテム要約時.cs" />
     <Compile Include="Domain.Model\Products\BacklogItems\バックログアイテムタイプ.cs" />
-    <Compile Include="Domain.Model\Products\BacklogItems\BacklogItemId.cs" />
+    <Compile Include="Domain.Model\Products\BacklogItems\バックログアイテムId.cs" />
     <Compile Include="Domain.Model\Products\BacklogItems\バックログアイテムタイプ変更時.cs" />
     <Compile Include="Domain.Model\Products\BacklogItems\バックログアイテム未コミット時.cs" />
     <Compile Include="Domain.Model\Products\BacklogItems\バックログアイテム計画除外時.cs" />
-    <Compile Include="Domain.Model\Products\BacklogItems\BusinessPriority.cs" />
-    <Compile Include="Domain.Model\Products\BacklogItems\BusinessPriorityAssigned.cs" />
-    <Compile Include="Domain.Model\Products\BacklogItems\BusinessPriorityRatings.cs" />
-    <Compile Include="Domain.Model\Products\BacklogItems\BusinessPriorityTotals.cs" />
+    <Compile Include="Domain.Model\Products\BacklogItems\ビジネス優先度.cs" />
+    <Compile Include="Domain.Model\Products\BacklogItems\ビジネス優先度アサイン時.cs" />
+    <Compile Include="Domain.Model\Products\BacklogItems\ビジネス優先度レーティング.cs" />
+    <Compile Include="Domain.Model\Products\BacklogItems\ビジネス優先度合計.cs" />
     <Compile Include="Domain.Model\Products\BacklogItems\見積りログエントリー.cs" />
     <Compile Include="Domain.Model\Products\BacklogItems\IバックログアイテムRepository.cs" />
-    <Compile Include="Domain.Model\Products\BacklogItems\StoryPoints.cs" />
+    <Compile Include="Domain.Model\Products\BacklogItems\ストーリポイント.cs" />
     <Compile Include="Domain.Model\Products\BacklogItems\タスク.cs" />
     <Compile Include="Domain.Model\Products\BacklogItems\タスク定義時.cs" />
     <Compile Include="Domain.Model\Products\BacklogItems\タスク記述時.cs" />
@@ -131,7 +133,7 @@
     <Compile Include="Domain.Model\Teams\チーム.cs" />
     <Compile Include="Domain.Model\Teams\チームメンバ.cs" />
     <Compile Include="Domain.Model\Teams\チームメンバId.cs" />
-    <Compile Include="Domain.Model\Tenants\TenantId.cs" />
+    <Compile Include="Domain.Model\Tenants\テナントId.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\iddd_common\Common.csproj">
@@ -151,7 +153,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StyleCop.MSBuild.4.7.49.1\build\StyleCop.MSBuild.Targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

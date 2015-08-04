@@ -7,7 +7,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Teams
 {
     public interface IチームメンバRepository
     {
-        ICollection<チームメンバ> GetAllTeamMembers(Tenants.TenantId tenantId);
+        ICollection<チームメンバ> GetAllTeamMembers(Tenants.テナントId tenantId);
 
         void Remove(チームメンバ teamMember);
 
@@ -17,6 +17,6 @@ namespace SaaSOvation.AgilePM.Domain.Model.Teams
 
         void SaveAll(IEnumerable<チームメンバ> teamMembers);
 
-        チームメンバ Get(Tenants.TenantId tenantId, string userName);
+        チームメンバ Get(Tenants.テナントId tenantId, string userName);
     }
 }

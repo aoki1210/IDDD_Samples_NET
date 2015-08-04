@@ -28,14 +28,14 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
     public class バックログアイテム : EntityWithCompositeId
     {
         public バックログアイテム(
-            TenantId tenantId,
+            テナントId tenantId,
             プロダクトId productId,
-            BacklogItemId backlogItemId,
+            バックログアイテムId backlogItemId,
             string summary,
             string category,
             バックログアイテムタイプ type,
             バックログアイテムステータス backlogItemStatus,
-            StoryPoints storyPoints)
+            ストーリポイント storyPoints)
         {
             this.BacklogItemId = backlogItemId;
             this.Category = category;
@@ -51,11 +51,11 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
 
         readonly List<タスク> tasks;
 
-        public TenantId TenantId { get; private set; }
+        public テナントId TenantId { get; private set; }
 
         public プロダクトId ProductId { get; private set; }
 
-        public BacklogItemId BacklogItemId { get; private set; }
+        public バックログアイテムId BacklogItemId { get; private set; }
 
         string summary;
 
@@ -91,7 +91,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
             get { return this.Status == バックログアイテムステータス.Removed; }
         }
 
-        public StoryPoints StoryPoints { get; private set; }
+        public ストーリポイント StoryPoints { get; private set; }
 
         public string AssociatedIssueId { get; private set; }
 
@@ -103,25 +103,25 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
             }
         }
 
-        public BusinessPriority BusinessPriority { get; private set; }
+        public ビジネス優先度 BusinessPriority { get; private set; }
 
         public bool HasBusinessPriority
         {
             get { return this.BusinessPriority != null; }
         }
 
-        public void AssignBusinessPriority(BusinessPriority businessPriority)
+        public void AssignBusinessPriority(ビジネス優先度 businessPriority)
         {
             this.BusinessPriority = businessPriority;
             DomainEventPublisher.Instance.Publish(
-                new BusinessPriorityAssigned(this.TenantId, this.BacklogItemId, businessPriority));
+                new ビジネス優先度アサイン時(this.TenantId, this.BacklogItemId, businessPriority));
         }
 
-        public void AssignStoryPoints(StoryPoints storyPoints)
+        public void AssignStoryPoints(ストーリポイント storyPoints)
         {
             this.StoryPoints = storyPoints;
             DomainEventPublisher.Instance.Publish(
-                new BacklogItemStoryPointsAssigned(this.TenantId, this.BacklogItemId, storyPoints));
+                new バックログアイテムストーリポイントアサイン時(this.TenantId, this.BacklogItemId, storyPoints));
         }
 
         public タスク GetTask(タスクId taskId)

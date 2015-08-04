@@ -22,13 +22,13 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
     public class プロダクトバックログアイテム計画時 : IDomainEvent
     {
         public プロダクトバックログアイテム計画時(
-            TenantId tenantId,
+            テナントId tenantId,
             プロダクトId productId,
-            BacklogItemId backlogItemId,
+            バックログアイテムId backlogItemId,
             string summary,
             string category,
             BacklogItems.バックログアイテムタイプ backlogItemType,
-            BacklogItems.StoryPoints storyPoints)
+            BacklogItems.ストーリポイント storyPoints)
         {
             this.BacklogItemId = backlogItemId;
             this.Category = category;
@@ -41,7 +41,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
             this.Type = backlogItemType;
         }
 
-        public BacklogItemId BacklogItemId { get; private set; }
+        public バックログアイテムId BacklogItemId { get; private set; }
 
         public string Category { get; private set; }
 
@@ -51,11 +51,11 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
 
         public プロダクトId ProductId { get; private set; }
 
-        public StoryPoints StoryPoints { get; private set; }
+        public ストーリポイント StoryPoints { get; private set; }
 
         public string Summary { get; private set; }
 
-        public TenantId TenantId { get; private set; }
+        public テナントId TenantId { get; private set; }
 
         public バックログアイテムタイプ Type { get; private set; }
     }

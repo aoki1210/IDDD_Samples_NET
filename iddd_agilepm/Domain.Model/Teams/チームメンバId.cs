@@ -9,7 +9,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Teams
 {
     public class チームメンバId : ValueObject
     {
-        public チームメンバId(Tenants.TenantId tenantId, string id)
+        public チームメンバId(Tenants.テナントId tenantId, string id)
         {
             AssertionConcern.AssertArgumentNotNull(tenantId, "The tenantId must be provided.");
             AssertionConcern.AssertArgumentNotEmpty(id, "The id must be provided.");
@@ -19,7 +19,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Teams
             this.Id = id;
         }
 
-        public Tenants.TenantId TenantId { get; private set; }
+        public Tenants.テナントId TenantId { get; private set; }
 
         public string Id { get; private set; }
 

@@ -26,7 +26,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.Sprints
     public class スプリント : Entity, IEquatable<スプリント>
     {
         public スプリント(
-            TenantId tenantId,
+            テナントId tenantId,
             プロダクトId productId,
             スプリントId sprintId,
             string name,
@@ -65,7 +65,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.Sprints
 
         public スプリントId SprintId { get; private set; }
 
-        public TenantId TenantId { get; private set; }
+        public テナントId TenantId { get; private set; }
 
         public ICollection<コミット済バックログアイテム> AllCommittedBacklogItems()
         {
@@ -116,7 +116,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.Sprints
             // TODO: publish event
         }
 
-        public void ReOrderFrom(BacklogItemId id, int orderOfPriority)
+        public void ReOrderFrom(バックログアイテムId id, int orderOfPriority)
         {
             foreach (var committedBacklogItem in this.backlogItems)
             {

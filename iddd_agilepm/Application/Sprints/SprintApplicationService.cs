@@ -22,9 +22,9 @@ namespace SaaSOvation.AgilePM.Application.Sprints
 
         public void CommitBacklogItemToSprint(CommitBacklogItemToSprintCommand command)
         {
-            var tenantId = new TenantId(command.TenantId);
+            var tenantId = new テナントId(command.TenantId);
             var sprint = this.sprintRepository.Get(tenantId, new スプリントId(command.SprintId));
-            var backlogItem = this.backlogItemRepository.Get(tenantId, new BacklogItemId(command.BacklogItemId));
+            var backlogItem = this.backlogItemRepository.Get(tenantId, new バックログアイテムId(command.BacklogItemId));
 
             sprint.Commit(backlogItem);
 
