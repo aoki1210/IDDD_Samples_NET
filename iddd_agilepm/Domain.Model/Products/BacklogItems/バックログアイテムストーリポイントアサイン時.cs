@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,9 +7,9 @@ using SaaSOvation.Common.Domain.Model;
 
 namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
 {
-    public class ƒoƒbƒNƒƒOƒAƒCƒeƒ€ƒXƒg[ƒŠƒ|ƒCƒ“ƒgƒAƒTƒCƒ“ : IDomainEvent
+    public class ãƒãƒƒã‚¯ãƒ­ã‚°ã‚¢ã‚¤ãƒ†ãƒ ã‚¹ãƒˆãƒ¼ãƒªãƒã‚¤ãƒ³ãƒˆã‚¢ã‚µã‚¤ãƒ³æ™‚ : IDomainEvent
     {
-        public ƒoƒbƒNƒƒOƒAƒCƒeƒ€ƒXƒg[ƒŠƒ|ƒCƒ“ƒgƒAƒTƒCƒ“(Tenants.ƒeƒiƒ“ƒgId tenantId, ƒoƒbƒNƒƒOƒAƒCƒeƒ€Id backlogItemId, ƒXƒg[ƒŠƒ|ƒCƒ“ƒg storyPoints)
+        public ãƒãƒƒã‚¯ãƒ­ã‚°ã‚¢ã‚¤ãƒ†ãƒ ã‚¹ãƒˆãƒ¼ãƒªãƒã‚¤ãƒ³ãƒˆã‚¢ã‚µã‚¤ãƒ³æ™‚(Tenants.ãƒ†ãƒŠãƒ³ãƒˆId tenantId, ãƒãƒƒã‚¯ãƒ­ã‚°ã‚¢ã‚¤ãƒ†ãƒ Id backlogItemId, ã‚¹ãƒˆãƒ¼ãƒªãƒã‚¤ãƒ³ãƒˆ storyPoints)
         {
             this.TenantId = tenantId;
             this.EventVersion = 1;
@@ -19,11 +19,11 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
             this.StoryPoints = storyPoints;
         }
 
-        public Tenants.ƒeƒiƒ“ƒgId TenantId { get; private set; }
+        public Tenants.ãƒ†ãƒŠãƒ³ãƒˆId TenantId { get; private set; }
         public int EventVersion { get; set; }
         public DateTime OccurredOn { get; set; }
 
-        public ƒoƒbƒNƒƒOƒAƒCƒeƒ€Id BacklogItemId { get; private set; }
-        public ƒXƒg[ƒŠƒ|ƒCƒ“ƒg StoryPoints { get; private set; }
+        public ãƒãƒƒã‚¯ãƒ­ã‚°ã‚¢ã‚¤ãƒ†ãƒ Id BacklogItemId { get; private set; }
+        public ã‚¹ãƒˆãƒ¼ãƒªãƒã‚¤ãƒ³ãƒˆ StoryPoints { get; private set; }
     }
 }

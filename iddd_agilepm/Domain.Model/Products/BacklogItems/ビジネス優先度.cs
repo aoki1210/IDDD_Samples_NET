@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,33 +7,33 @@ using SaaSOvation.Common.Domain.Model;
 
 namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
 {
-    public class ƒrƒWƒlƒX—Dæ“x : ValueObject
+    public class ãƒ“ã‚¸ãƒã‚¹å„ªå…ˆåº¦ : ValueObject
     {
-        public ƒrƒWƒlƒX—Dæ“x(ƒrƒWƒlƒX—Dæ“xƒŒ[ƒeƒBƒ“ƒO ratings)
+        public ãƒ“ã‚¸ãƒã‚¹å„ªå…ˆåº¦(ãƒ“ã‚¸ãƒã‚¹å„ªå…ˆåº¦ãƒ¬ãƒ¼ãƒ†ã‚£ãƒ³ã‚° ratings)
         {
             AssertionConcern.AssertArgumentNotNull(ratings, "The ratings must be provided.");
             this.Ratings = ratings;
         }
 
-        public ƒrƒWƒlƒX—Dæ“xƒŒ[ƒeƒBƒ“ƒO Ratings { get; private set; }
+        public ãƒ“ã‚¸ãƒã‚¹å„ªå…ˆåº¦ãƒ¬ãƒ¼ãƒ†ã‚£ãƒ³ã‚° Ratings { get; private set; }
 
-        public float CostPercentage(ƒrƒWƒlƒX—Dæ“x‡Œv totals)
+        public float CostPercentage(ãƒ“ã‚¸ãƒã‚¹å„ªå…ˆåº¦åˆè¨ˆ totals)
         {
             return (float)100 * this.Ratings.Cost / totals.TotalCost;
         }
 
-        public float Priority(ƒrƒWƒlƒX—Dæ“x‡Œv totals)
+        public float Priority(ãƒ“ã‚¸ãƒã‚¹å„ªå…ˆåº¦åˆè¨ˆ totals)
         {
             var costAndRisk = CostPercentage(totals) + RiskPercentage(totals);
             return ValuePercentage(totals) / costAndRisk;
         }
 
-        public float RiskPercentage(ƒrƒWƒlƒX—Dæ“x‡Œv totals)
+        public float RiskPercentage(ãƒ“ã‚¸ãƒã‚¹å„ªå…ˆåº¦åˆè¨ˆ totals)
         {
             return (float)100 * this.Ratings.Risk / totals.TotalRisk;
         }
 
-        public float ValuePercentage(ƒrƒWƒlƒX—Dæ“x‡Œv totals)
+        public float ValuePercentage(ãƒ“ã‚¸ãƒã‚¹å„ªå…ˆåº¦åˆè¨ˆ totals)
         {
             return (float)100 * this.TotalValue / totals.TotalValue;
         }

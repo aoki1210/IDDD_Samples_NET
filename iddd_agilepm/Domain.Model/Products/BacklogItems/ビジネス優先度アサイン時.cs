@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,9 +7,9 @@ using SaaSOvation.Common.Domain.Model;
 
 namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
 {
-    public class ƒrƒWƒlƒX—Dæ“xƒAƒTƒCƒ“ : IDomainEvent
+    public class ãƒ“ã‚¸ãƒã‚¹å„ªå…ˆåº¦ã‚¢ã‚µã‚¤ãƒ³æ™‚ : IDomainEvent
     {
-        public ƒrƒWƒlƒX—Dæ“xƒAƒTƒCƒ“(Tenants.ƒeƒiƒ“ƒgId tenantId, ƒoƒbƒNƒƒOƒAƒCƒeƒ€Id backlogItemId, ƒrƒWƒlƒX—Dæ“x businessPriority)
+        public ãƒ“ã‚¸ãƒã‚¹å„ªå…ˆåº¦ã‚¢ã‚µã‚¤ãƒ³æ™‚(Tenants.ãƒ†ãƒŠãƒ³ãƒˆId tenantId, ãƒãƒƒã‚¯ãƒ­ã‚°ã‚¢ã‚¤ãƒ†ãƒ Id backlogItemId, ãƒ“ã‚¸ãƒã‚¹å„ªå…ˆåº¦ businessPriority)
         {
             this.TenantId = tenantId;
             this.EventVersion = 1;
@@ -19,11 +19,11 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
             this.BusinessPriority = businessPriority;
         }
 
-        public Tenants.ƒeƒiƒ“ƒgId TenantId { get; private set; }
+        public Tenants.ãƒ†ãƒŠãƒ³ãƒˆId TenantId { get; private set; }
         public int EventVersion { get; set; }
         public DateTime OccurredOn { get; set; }
 
-        public ƒoƒbƒNƒƒOƒAƒCƒeƒ€Id BacklogItemId { get; private set; }
-        public ƒrƒWƒlƒX—Dæ“x BusinessPriority { get; private set; }
+        public ãƒãƒƒã‚¯ãƒ­ã‚°ã‚¢ã‚¤ãƒ†ãƒ Id BacklogItemId { get; private set; }
+        public ãƒ“ã‚¸ãƒã‚¹å„ªå…ˆåº¦ BusinessPriority { get; private set; }
     }
 }
