@@ -21,17 +21,17 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
     public class プロダクトディスカッション : ValueObject
     {
         public static プロダクトディスカッション FromAvailability(
-                DiscussionAvailability availability)
+                ディスカッションアベイラビリティ availability)
         {
-            if (availability == DiscussionAvailability.Ready)
+            if (availability == ディスカッションアベイラビリティ.Ready)
                 throw new InvalidOperationException("Cannot be created ready.");
 
-            var descriptor = new DiscussionDescriptor(DiscussionDescriptor.UNDEFINED_ID);
+            var descriptor = new ディスカッション記述子(ディスカッション記述子.UNDEFINED_ID);
 
             return new プロダクトディスカッション(descriptor, availability);
         }
 
-        public プロダクトディスカッション(DiscussionDescriptor descriptor, DiscussionAvailability availability)
+        public プロダクトディスカッション(ディスカッション記述子 descriptor, ディスカッションアベイラビリティ availability)
         {
             AssertionConcern.AssertArgumentNotNull(descriptor, "The descriptor must be provided.");
             this.Availability = availability;
@@ -43,17 +43,17 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
         {
         }
 
-        public DiscussionAvailability Availability { get; private set; }
+        public ディスカッションアベイラビリティ Availability { get; private set; }
 
-        public DiscussionDescriptor Descriptor { get; private set; }
+        public ディスカッション記述子 Descriptor { get; private set; }
 
-        public プロダクトディスカッション NowReady(DiscussionDescriptor descriptor)
+        public プロダクトディスカッション NowReady(ディスカッション記述子 descriptor)
         {
             if (descriptor == null || descriptor.IsUndefined)
                 throw new ArgumentException("The discussion descriptor must be defined.");
-            if (this.Availability != DiscussionAvailability.Requested)
+            if (this.Availability != ディスカッションアベイラビリティ.Requested)
                 throw new InvalidOperationException("The discussion must be requested first.");
-            return new プロダクトディスカッション(descriptor, DiscussionAvailability.Ready);
+            return new プロダクトディスカッション(descriptor, ディスカッションアベイラビリティ.Ready);
         }
 
         protected override System.Collections.Generic.IEnumerable<object> GetEqualityComponents()

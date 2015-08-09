@@ -10,35 +10,35 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
 {
     public class バックログアイテムディスカッション : ValueObject
     {
-        public static バックログアイテムディスカッション FromAvailability(DiscussionAvailability availability)
+        public static バックログアイテムディスカッション FromAvailability(ディスカッションアベイラビリティ availability)
         {
-            if (availability == DiscussionAvailability.Ready)
+            if (availability == ディスカッションアベイラビリティ.Ready)
                 throw new ArgumentException("Cannot be created ready.");
 
             return new バックログアイテムディスカッション(
-                new DiscussionDescriptor(DiscussionDescriptor.UNDEFINED_ID),
+                new ディスカッション記述子(ディスカッション記述子.UNDEFINED_ID),
                 availability);
         }
 
-        public バックログアイテムディスカッション(DiscussionDescriptor descriptor, DiscussionAvailability availability)
+        public バックログアイテムディスカッション(ディスカッション記述子 descriptor, ディスカッションアベイラビリティ availability)
         {
             this.Descriptor = descriptor;
             this.Availability = availability;
         }        
 
-        public DiscussionDescriptor Descriptor { get; private set; }
+        public ディスカッション記述子 Descriptor { get; private set; }
 
-        public DiscussionAvailability Availability { get; private set; }
+        public ディスカッションアベイラビリティ Availability { get; private set; }
 
-        public バックログアイテムディスカッション NowReady(DiscussionDescriptor descriptor)
+        public バックログアイテムディスカッション NowReady(ディスカッション記述子 descriptor)
         {
             if (descriptor == null || descriptor.IsUndefined)
                 throw new InvalidOperationException("The discussion descriptor must be defined.");
 
-            if (this.Availability != DiscussionAvailability.Requested)
+            if (this.Availability != ディスカッションアベイラビリティ.Requested)
                 throw new InvalidOperationException("The discussion must be requested first.");
 
-            return new バックログアイテムディスカッション(descriptor, DiscussionAvailability.Ready);
+            return new バックログアイテムディスカッション(descriptor, ディスカッションアベイラビリティ.Ready);
         }
 
         protected override IEnumerable<object> GetEqualityComponents()

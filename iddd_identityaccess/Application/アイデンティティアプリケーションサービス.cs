@@ -189,7 +189,7 @@
             parentGroup.RemoveGroup(childGroup);
         }
 
-        public void RemoveUserFromGroup(グループからユーzーあを削除コマンド command)
+        public void RemoveUserFromGroup(グループからユーザーを削除コマンド command)
         {
             var group = GetExistingGroup(command.TenantId, command.GroupName);
             var user = GetExistingUser(command.TenantId, command.Username);

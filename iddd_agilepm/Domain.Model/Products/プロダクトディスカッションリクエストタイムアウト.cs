@@ -7,9 +7,9 @@ using SaaSOvation.Common.Domain.Model.LongRunningProcess;
 
 namespace SaaSOvation.AgilePM.Domain.Model.Products
 {
-    public class プロダクトディスカッションリクエストタイムアウト : ProcessTimedOut
+    public class プロダクトディスカッションリクエストタイムアウト : プロセスタイムアウト
     {
-        public プロダクトディスカッションリクエストタイムアウト(string tenantId, ProcessId processId, int totalRetriedPermitted, int retryCount)
+        public プロダクトディスカッションリクエストタイムアウト(string tenantId, プロセスId processId, int totalRetriedPermitted, int retryCount)
             : base(tenantId, processId, totalRetriedPermitted, retryCount)
         {
         }

@@ -251,10 +251,10 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
 
         public void FailDiscussionInitiation()
         {
-            if (this.Discussion.Availability == DiscussionAvailability.Ready)
+            if (this.Discussion.Availability == ディスカッションアベイラビリティ.Ready)
             {
                 this.DiscussionInitiationId = null;
-                this.Discussion = バックログアイテムディスカッション.FromAvailability(DiscussionAvailability.Failed);
+                this.Discussion = バックログアイテムディスカッション.FromAvailability(ディスカッションアベイラビリティ.Failed);
             }
         }
 
@@ -271,10 +271,10 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
             }
         }
 
-        public void InitiateDiscussion(DiscussionDescriptor descriptor)
+        public void InitiateDiscussion(ディスカッション記述子 descriptor)
         {
             AssertionConcern.AssertArgumentNotNull(descriptor, "The descriptor must not be null.");
-            if (this.Discussion.Availability == DiscussionAvailability.Requested)
+            if (this.Discussion.Availability == ディスカッションアベイラビリティ.Requested)
             {
                 this.Discussion = this.Discussion.NowReady(descriptor);
                 DomainEventPublisher.Instance.Publish(
@@ -392,9 +392,9 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
             task.Rename(name);
         }
 
-        public void RequestDiscussion(DiscussionAvailability availability)
+        public void RequestDiscussion(ディスカッションアベイラビリティ availability)
         {
-            if (this.Discussion.Availability != DiscussionAvailability.Ready)
+            if (this.Discussion.Availability != ディスカッションアベイラビリティ.Ready)
             {
                 this.Discussion = バックログアイテムディスカッション.FromAvailability(availability);
 
@@ -403,7 +403,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
                         this.TenantId,
                         this.ProductId,
                         this.BacklogItemId,
-                        availability == DiscussionAvailability.Requested));
+                        availability == ディスカッションアベイラビリティ.Requested));
 
             }
         }
@@ -433,7 +433,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products.BacklogItems
 
         public void StartDiscussionInitiation(string discussionInitiationId)
         {
-            if (this.Discussion.Availability != DiscussionAvailability.Ready)
+            if (this.Discussion.Availability != ディスカッションアベイラビリティ.Ready)
             {
                 this.DiscussionInitiationId = discussionInitiationId;
             }

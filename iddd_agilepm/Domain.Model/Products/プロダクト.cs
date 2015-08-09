@@ -33,7 +33,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
                 プロダクトオーナId productOwnerId,
                 string name,
                 string description,
-                DiscussionAvailability discussionAvailability)
+                ディスカッションアベイラビリティ discussionAvailability)
         {
             this.TenantId = tenantId; // must precede productOwnerId for compare
             this.Description = description;
@@ -89,22 +89,22 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
 
         public void FailDiscussionInitiation()
         {
-            if (this.Discussion.Availability != DiscussionAvailability.Ready)
+            if (this.Discussion.Availability != ディスカッションアベイラビリティ.Ready)
             {
                 this.DiscussionInitiationId = null;
 
-                this.Discussion = プロダクトディスカッション.FromAvailability(DiscussionAvailability.Failed);
+                this.Discussion = プロダクトディスカッション.FromAvailability(ディスカッションアベイラビリティ.Failed);
             }
         }
 
-        public void InitiateDiscussion(DiscussionDescriptor descriptor)
+        public void InitiateDiscussion(ディスカッション記述子 descriptor)
         {
             if (descriptor == null)
             {
                 throw new InvalidOperationException("The descriptor must not be null.");
             }
 
-            if (this.Discussion.Availability == DiscussionAvailability.Requested)
+            if (this.Discussion.Availability == ディスカッションアベイラビリティ.Requested)
             {
                 this.Discussion = this.Discussion.NowReady(descriptor);
 
@@ -174,9 +174,9 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
             }
         }
 
-        public void RequestDiscussion(DiscussionAvailability discussionAvailability)
+        public void RequestDiscussion(ディスカッションアベイラビリティ discussionAvailability)
         {
-            if (this.Discussion.Availability != DiscussionAvailability.Ready)
+            if (this.Discussion.Availability != ディスカッションアベイラビリティ.Ready)
             {
                 this.Discussion =
                         プロダクトディスカッション.FromAvailability(discussionAvailability);
@@ -189,7 +189,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
                             this.ProductOwnerId,
                             this.Name,
                             this.Description,
-                            this.Discussion.Availability == DiscussionAvailability.Requested));
+                            this.Discussion.Availability == ディスカッションアベイラビリティ.Requested));
             }
         }
 
@@ -257,7 +257,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
 
         public void StartDiscussionInitiation(String discussionInitiationId)
         {
-            if (this.Discussion.Availability != DiscussionAvailability.Ready)
+            if (this.Discussion.Availability != ディスカッションアベイラビリティ.Ready)
             {
                 this.DiscussionInitiationId = discussionInitiationId;
             }

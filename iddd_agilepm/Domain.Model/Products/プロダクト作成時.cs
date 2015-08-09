@@ -28,7 +28,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
             プロダクトオーナId productOwnerId,
             string name,
             string description,
-            DiscussionAvailability availability)
+            ディスカッションアベイラビリティ availability)
         {
             this.Availability = availability;
             this.Description = description;
@@ -40,7 +40,7 @@ namespace SaaSOvation.AgilePM.Domain.Model.Products
             this.TenantId = tenantId;
         }
 
-        public DiscussionAvailability Availability { get; private set; }
+        public ディスカッションアベイラビリティ Availability { get; private set; }
 
         public string Description { get; private set; }
 

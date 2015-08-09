@@ -64,7 +64,7 @@
     <Compile Include="Application\Commands\プロビジョンテナントコマンド.cs" />
     <Compile Include="Application\Commands\ユーザー登録コマンド.cs" />
     <Compile Include="Application\Commands\グループからグループフォーラムを削除コマンド.cs" />
-    <Compile Include="Application\Commands\グループからユーzーあを削除コマンド.cs" />
+    <Compile Include="Application\Commands\グループからユーザーを削除コマンド.cs" />
     <Compile Include="Application\アイデンティティアクセスイベントプロセッサ.cs" />
     <Compile Include="Application\アイデンティティアプリケーションサービス.cs" />
     <Compile Include="Application\通知アプリケーションサービス.cs" />
